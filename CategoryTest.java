@@ -10,16 +10,17 @@ public class CategoryTest {
 	public static void main(String[] args)
 	{
 		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
-		context.scan("com.niit");
+		context.scan("com.niit.shoponline");
 		context.refresh();
 		CategoryDAO categoryDAO = (CategoryDAO) context.getBean("categoryDAO");
 		
 		Category category = (Category) context.getBean("category");
 		
-		category.setId("mob01");
+		category.setId("mob10");
 		category.setName("alias");
 		category.setDescription("this is mobile category");
-		if(categoryDAO.save(category)==true)
+		
+		if(categoryDAO.save(category) == true)
 		{
 			System.out.println("Category created successfully");
 		}
